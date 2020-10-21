@@ -9,11 +9,14 @@ ENV PYTHONUNBUFFERED 1
 # create root directory for our project in the container
 RUN mkdir /web_service
 
-# Set the working directory to /music_service
+# Set the working directory to /web_service
 WORKDIR /web_service
 
-# Copy the current directory contents into the container at /music_service
-ADD . /web_service/
+# Copy requirements file to /web_service
+COPY requirements.txt /code/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
+
+# Copy the current directory contents into the container at /web_service
+COPY . /web_service/
