@@ -13,7 +13,7 @@ RUN mkdir /web_service
 WORKDIR /web_service
 
 # Copy requirements file to /web_service
-COPY requirements.txt /code/
+COPY requirements.txt /web_service/
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
